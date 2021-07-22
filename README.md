@@ -20,7 +20,7 @@ The main idea to use pre-trained NER was to give direction to the model to predi
 ### Proposed Model Architecture
 We will tackle the NER Tag prediction problem as a sequence classification problem. However, rather than using standard deep learning architecture, we have chosen a encoder-decoder based architecture. The encoder will help us to extract a contextual sentence information which can be utilized by a decoder to classify each NER tag.
 1. Context Encoder :
-A simple bi-GRU unit that runts through training dataset and stores context information on a sentence level.
+A simple bi-GRU unit that runts through training dataset and stores context information on a sentence level.  
   1.1. Input:
     * Embedding Dimension Size - dynamice depnding on features selected
     * Hidden Layer Size - parameterised value
