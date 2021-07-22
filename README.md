@@ -21,24 +21,24 @@ The main idea to use pre-trained NER was to give direction to the model to predi
 We will tackle the NER Tag prediction problem as a sequence classification problem. However, rather than using standard deep learning architecture, we have chosen a encoder-decoder based architecture. The encoder will help us to extract a contextual sentence information which can be utilized by a decoder to classify each NER tag.
 1. Context Encoder :
   A simple bi-GRU unit that runts through training dataset and stores context information on a sentence level.
-  1. Input:
-  * Embedding Dimension Size - dynamice depnding on features selected
-  * Hidden Layer Size - parameterised value
-  2. Return:
-  * Output and Hidden layer encodings
+  1.1. Input:
+    - Embedding Dimension Size - dynamice depnding on features selected
+    - Hidden Layer Size - parameterised value
+  1.2. Return:
+    - Output and Hidden layer encodings
 
 2 Attention Decoder :
   An bi-GRU unit (bi-directional / Layer switch available) + Linear layer that takes in encoded context information from step 1, calculates attention, and classifies NER tag based on Conditional Random Field scoring. The Decoder works in following steps
-  1. RNN-based encodings:
-  * Input : Embedding matrix
-  2. Attention Calculation:
-  # Input 1 : Encoded hidden states for overall sentence (contextual information)
-  # Input 2 : bi-Gru output from step 1
-  # Returns : Concatenated product based on attention method selected (Dot or Scaled dot)
-3. Linear Layer:
-- Input : Attention concatenated layer
-- Returns : Flattened output into tag space
-4. CRF Scoring :
-- Input 1 : Flattened tag space
-- Input 2 : Target NER tags
-- Returns : Predicted sequence based on Viterbi scoring
+  2.1. RNN-based encodings:
+    - Input : Embedding matrix
+  2.1. Attention Calculation:
+    - Input 1 : Encoded hidden states for overall sentence (contextual information)
+    - Input 2 : bi-Gru output from step 1
+    - Returns : Concatenated product based on attention method selected (Dot or Scaled dot)
+  2.3. Linear Layer:
+    - Input : Attention concatenated layer
+    - Returns : Flattened output into tag space
+2. 4. CRF Scoring :
+    - Input 1 : Flattened tag space
+    - Input 2 : Target NER tags
+    - Returns : Predicted sequence based on Viterbi scoring
