@@ -37,8 +37,8 @@ An bi-GRU unit (bi-directional / Layer switch available) + Linear layer that tak
     * Returns : Concatenated product based on attention method selected (Dot or Scaled dot).  
   * Linear Layer:
     * Input : Attention concatenated layer
-    * Returns : Flattened output into tag space
-  2.4. CRF Scoring :
+    * Returns : Flattened output into tag space.  
+  * CRF Scoring :
     * Input 1 : Flattened tag space
     * Input 2 : Target NER tags
-    *Returns : Predicted sequence based on Viterbi scoring
+    * Returns : Predicted sequence based on Viterbi scoring
