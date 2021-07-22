@@ -22,9 +22,9 @@ We will tackle the NER Tag prediction problem as a sequence classification probl
 1. Context Encoder :
 A simple bi-GRU unit that runts through training dataset and stores context information on a sentence level.  
   1.1. Input:
-    * Embedding Dimension Size - dynamice depnding on features selected
-    * Hidden Layer Size - parameterised value
-  1.2. Return:
+    * Embedding Dimension Size - dynamice depnding on features selected.
+    * Hidden Layer Size - parameterised value. 
+  1.2. Return:  
     * Output and Hidden layer encodings
 
 2. Attention Decoder :
