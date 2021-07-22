@@ -41,4 +41,4 @@ An bi-GRU unit (bi-directional / Layer switch available) + Linear layer that tak
   2.4. CRF Scoring :
     * Input 1 : Flattened tag space
     * Input 2 : Target NER tags
-    * Returns : Predicted sequence based on Viterbi scoring
+    *Returns : Predicted sequence based on Viterbi scoring
